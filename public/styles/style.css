@@ -1,0 +1,24 @@
+body {
+    background-color: antiquewhite;
+    width: 100%;
+}
+
+.square {
+    border: solid 2px crimson;
+    height: 100px;
+    width: 100px;
+}
+
+.board {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    height: 316px;
+    width: 316px;
+}
+
+.mole {
+    background-image: url("https://s1.piq.land/2012/02/04/n8yEHP5FWq4txktHwxbKqA1g_400x400.png");
+    background-size: cover;
+}
