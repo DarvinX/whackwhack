@@ -7,10 +7,11 @@ document.addEventListener('DOMContentLoaded', function(){
     var timeIn = null;
     var moveMole = null;
     const scoreBoard = document.getElementById("scoreBoard");
+    const timeLeftElement = document.querySelector("#time-left");
 
-    document.getElementById('start').addEventListener('click', startGame);
-    
-    function startGame(){
+    document.getElementById('start-button').addEventListener('click', StartGame);
+    document.getElementById('reset-button').addEventListener('click', ResetGame)    
+    function StartGame(){
         moveMole = setInterval(function(){
             try{
                 document.querySelector(".mole").classList.remove('mole');
@@ -38,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function(){
             }
             leftTime--;
             //print("time decreased");
-            document.querySelector("#time-left").textContent = leftTime; //write the time left
+            timeLeftElement.textContent = leftTime; //write the time left
         }, 1000)    
     }
     function print(msg){
@@ -46,6 +47,7 @@ document.addEventListener('DOMContentLoaded', function(){
             console.log('debug message: '+msg);
     }
     function hit(){
+        console.log(this);
         hitPosition = this.getAttribute('id');
         print("hitPosition: "+hitPosition);
         print("currentLoc: "+currentLoc);
@@ -56,23 +58,19 @@ document.addEventListener('DOMContentLoaded', function(){
         }
     }
 
-    function DrawBoard(){ // draw the board with the eventlistenrs
-        var board=document.querySelector(".board");
-        for(var i = 0; i< 9; i++){
-            var square = document.createElement("div");
-            square.setAttribute('class','square');
-            square.setAttribute('id',i);
-            square.addEventListener('click', hit)
-            board.appendChild(square);
-        }
-    }
-    DrawBoard();
+    document.querySelectorAll(".square").forEach(function(e){
+        console.log(e);
+        e.addEventListener('click', hit);
+    })
     
     function ResetGame(){
         clearInterval(timeIn);
         clearInterval(moveMole);
+
         score = 0;
         leftTime = 60;
+        scoreBoard.textContent = 0;
+        timeLeftElement.textContent = 60;      
         document.querySelector(".mole").classList.remove('mole');
     }
     

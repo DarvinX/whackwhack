@@ -1,12 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+:root {
+    --body-background-color: #fdfdfd;
+    --heading-color: #a1eafb;
+    --score-time-text-color: #ffcef3;
+    --square-border-color: #cabbe9;
+}
+
 body {
-    background-color: antiquewhite;
-    width: 100%;
+    background-color: var(--body-background-color);
+    width: 100vw;
+    margin-left: 0;
+    margin-top: 0;
+    font-family: "Indie Flower", sans-sarif;
+}
+
+body .game-container {
+    width: fit-content;
+    margin: auto;
+}
+
+#heading {
+    color: var(--heading-color);
+    font-size: 70px;
+    margin: 0;
+    text-align:center;
+    padding: 5px;
+    padding-left: 5vw;
+}
+
+.scoreLabel, .timeLabel {
+    height: fit-content;
+    padding: 5px;
+    margin: 5px;
+    margin-left: 5vw;
+    font-size: 1.5rem;
+}
+
+.scoreLabel {
+    float: left;
+}
+
+.timeLabel {
+    float: right;
+}
+
+.label-container {
+    height: 3rem;
+}
+
+#scoreBoard, #time-left {
+    margin: 10px;
+    font-size: 40px;
+    color: var(--score-time-text-color);
 }
 
 .square {
-    border: solid 2px crimson;
-    height: 100px;
-    width: 100px;
+    border: solid 2px var(--square-border-color);
+    height: 6rem;
+    width: 6rem;
+    border-radius: 25%;
+    padding: 5px;
+    margin: 2.5px;
 }
 
 .board {
@@ -14,11 +69,70 @@ body {
     flex-flow: row wrap;
     justify-content: center;
     align-content: center;
-    height: 316px;
-    width: 316px;
+    height: fit-content;
+    width: 25rem;
+    padding-top: 15px;
+    margin: 3rem auto;
 }
 
 .mole {
     background-image: url("https://s1.piq.land/2012/02/04/n8yEHP5FWq4txktHwxbKqA1g_400x400.png");
     background-size: cover;
 }
+
+.control-buttons {
+    width: fit-content;
+    margin: 4rem auto;
+}
+
+#start-button {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+#start-button:hover {
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background-color:#f6f6f6;
+}
+#start-button:active {
+	position:relative;
+	top:1px;
+}
+
+#reset-button {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ffffff 5%, #f6f6f6 100%);
+	background-color:#ffffff;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#666666;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+#reset-button:hover {
+	background:linear-gradient(to bottom, #f6f6f6 5%, #ffffff 100%);
+	background-color:#f6f6f6;
+}
+#reset-button:active {
+	position:relative;
+	top:1px;
+}
+
+
