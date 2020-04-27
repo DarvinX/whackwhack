@@ -2,41 +2,57 @@
 <html lang='en' dir='ltr'>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Whack It</title>
-  <link rel="stylesheet" href="styles/style.css">
-  <link rel="icon" href="favicon.ico">
-  <script defer src="/__/firebase/7.14.1/firebase-app.js"></script>
-  <script defer src="/__/firebase/7.14.1/firebase-database.js"></script>
-  <!-- <script defer src="/__/firebase/7.14.1/firebase-storage.js"></script> -->
-  <script defer src="/__/firebase/init.js"></script>
-  <script defer type="text/javascript" src="scripts/app.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Whack It</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" href="favicon.ico">
+    <script defer src="/__/firebase/7.14.1/firebase-app.js"></script>
+    <script defer src="/__/firebase/7.14.1/firebase-database.js"></script>
+    <!-- <script defer src="/__/firebase/7.14.1/firebase-storage.js"></script> -->
+    <script defer src="/__/firebase/init.js"></script>
+    <script defer type="text/javascript" src="scripts/app.js"></script>
 </head>
 
 <body>
-  <h1 id='heading'>Whack it</h1>
-  <div class="game-container">
-    <div class="label-container">
-      <h2 class="scoreLabel">Score: <span id="scoreBoard">0</span></h2>
-      <h2 class="timeLabel">Time: <span id="time-left">60</span></h2>
+    <h1 id='heading'>Whack it</h1>
+    <div class="game-container">
+        <div class="label-container">
+            <h2 class="scoreLabel">Score: <span id="scoreBoard">0</span></h2>
+            <h2 class="timeLabel">Time: <span id="time-left">60</span></h2>
+        </div>
+        <div class="board">
+            <div class="square" id="0"></div>
+            <div class="square" id="1"></div>
+            <div class="square" id="2"></div>
+            <div class="square" id="3"></div>
+            <div class="square" id="4"></div>
+            <div class="square" id="5"></div>
+            <div class="square" id="6"></div>
+            <div class="square" id="7"></div>
+            <div class="square" id="8"></div>
+        </div>
     </div>
-    <div class="board">
-      <div class="square" id="0"></div>
-      <div class="square" id="1"></div>
-      <div class="square" id="2"></div>
-      <div class="square" id="3"></div>
-      <div class="square" id="4"></div>
-      <div class="square" id="5"></div>
-      <div class="square" id="6"></div>
-      <div class="square" id="7"></div>
-      <div class="square" id="8"></div>
+    <div class="control-buttons">
+        <input type="button" value="Start" class="button" id="start-button" />
+        <input type="button" value="Reset" class="button" id="reset-button" />
     </div>
-  </div>
-  <div class="control-buttons">
-    <input type="button" value="Start" id="start-button" />
-    <input type="button" value="Reset" id="reset-button" />
-  </div>
+    <div class="uploader-container">
+        <div class="button">
+            <p>Currently used picture</p>
+            <img class="preview" src="https://s1.piq.land/2012/02/04/n8yEHP5FWq4txktHwxbKqA1g_400x400.png" id="current-pic" alt="current used picture">
+        </div>
+        <p>Don't like to whack a mole?</p>
+        <h2>Change the image</h2>
+        <p style="font-family: Arial, Helvetica, sans-serif;color: red;font-size:small;">The picture never leaves your device.</p>
+        <div class="button">
+            <input type="file" id="img-uploader" />
+            <img src="" class="preview" id="img-preview" hidden>
+        </div>
+        <br>
+        <input class="button" type="button" id="select-btn" value="Set this" />
+        <input class="button" type="button" id="rst-pic-btn" value="Reset Picture" />
+    </div>
 </body>
 
 </html>
